@@ -55,7 +55,7 @@ p.chi_percent = 20;         % [ASSUMPTION] paper does not explicitly state χ
 
 % ---- RB settings (paper defines RB concept but not numeric mapping) ----
 p.N_RB = 50;        % RB 개수는 그대로
-p.W_RB = 180e3;     % ✅ RB bandwidth를 180 kHz로 고정
+p.W_RB = 180e3;     % RB bandwidth를 180 kHz로 고정
 p.Pmin_dBm = -70;          % paper: Pmin = -70 dBm
 p.Pmin_ref_BW_hz = p.W_RB;   % -70 dBm per-RB (RB 기준)
 
@@ -176,7 +176,7 @@ delta_list = 0:0.04:1.0;
 Rstar_list = nan(size(delta_list));
 eta_bh_list = nan(size(delta_list));
 p2 = p;
-p2.nDrops = 1;   % ✅ Fig.2만 드랍 30회 (20~50 추천)
+p2.nDrops = 1;  
 
 for i = 1:numel(delta_list)
     d = delta_list(i);
@@ -222,4 +222,5 @@ legend('R* for Case 2, without Cell DTX', ...
        'R* for Case 2, with Cell DTX', ...
        'R* for Case 1, with Cell DTX', ...
        'Location','northwest');
+
 title('Daily area power consumption variation for \delta=0.1');
